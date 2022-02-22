@@ -1,0 +1,34 @@
+
+
+
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<table border="1">
+	<tr>
+		<th>ID</th>
+		<th>Nom</th>
+		<th>emplacement</th>
+		<th>prix_nuit</th>
+        <td>Modifier</td>
+		<td>Supprimer</td>
+
+        
+	</tr>
+	<tr {% for m in maisonhote %}>
+
+		<td>{{m.id}}</td>
+		<td>{{m.Nom}}</td>
+		<td>{{m.emplacement}}</td>
+		<td>{{m.Prixnuit}}</td>
+        <td><a href="{{ path('modifier',{'id':m.id})}}">Modifier</a></td>
+        <td><a href="{{ path('d',{'id':m.id})}}">Supprimer</a></td>
+
+	</tr>{% endfor %}
+</table>
+
+</body>
+
+
